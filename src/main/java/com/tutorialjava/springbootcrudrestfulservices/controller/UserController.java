@@ -39,7 +39,7 @@ public class UserController
 
     // update user
     @PutMapping("/{id}")
-    public User updateUser(@RequestBody User user,
+    public User updateUser(@Valid @RequestBody User user,
                            @PathVariable(value = "id") long userId) {
         User existingUser = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User Not Found By id: " + userId));

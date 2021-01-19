@@ -2,6 +2,7 @@ package com.tutorialjava.springbootcrudrestfulservices.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -19,11 +20,11 @@ public class User
     private String firstName;
 
     @NotNull
-    @Size(min = 2, message = "First Name should have atleast 2 characters")
+    @Size(min = 2, message = "Last Name should have atleast 2 characters")
     @Column(name = "last_name")
     private String lastName;
 
-    @NotNull
+    @NotBlank
     @Email
     @Column(name = "email")
     private String email;
